@@ -1,0 +1,500 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+// Main Content 
+
+main 
+{
+
+    // Products and stories share similar layout
+
+    .products 
+    {
+        margin-bottom: -5rem;
+        &__heading 
+        {
+            @include flexbox(space-between, center);
+            margin-bottom: 8rem;
+
+            span 
+            {
+                font-size: 66px;
+                line-height: 77px;
+            }
+
+            a 
+            {
+                @include resetLinks;
+                color: $primary-clr;
+                font-weight: bold;
+                @include flexbox(space-between, center);
+                width: 300px;
+                position: relative;
+                -webkit-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+                &:before 
+                {
+                    content: ''; 
+                    position: absolute;
+                    bottom: -8px;
+                    left: 0;
+                    right: 0;
+                    width: 0;
+                    height: 2px;
+                    background: $primary-clr;
+                    -webkit-transition: all .3s ease-in-out;
+                    -o-transition: all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
+                }
+
+
+                &:after
+                {
+                    content: ''; 
+                    position: absolute;
+                    bottom: -8px;
+                    right: 0;
+                    width: 0;
+                    height: 2px;
+                    background: $primary-clr;
+                    -webkit-transition: all .3s ease-in-out;
+                    -o-transition: all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
+                }
+                &:hover:before ,
+                &:hover:after
+                {
+                    width: 50%;
+                    -webkit-transition: all .3s ease-in-out;
+                    -o-transition: all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
+                }
+            }
+        }
+        margin-top: 8rem;
+        padding: $desktop-padding;
+        &__container 
+        {   
+            width: 100%;
+            height: 100%;
+            @include flexbox(start, start);
+
+            &__box 
+            {
+                width: 100%;
+                height: 100%;
+
+                img 
+                {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    overflow: hidden;
+                    -webkit-transition: 0.3s ease-in-out;
+                    -o-transition: 0.3s ease-in-out;
+                    transition: 0.3s ease-in-out;
+                }
+
+                .prod-showcase 
+                {
+                    overflow: hidden; 
+                    -webkit-transition: 0.3s ease-in-out; 
+                    -o-transition: 0.3s ease-in-out; 
+                    transition: 0.3s ease-in-out;
+                    &:hover img 
+                    {
+                        -webkit-transform: scale(1.05);
+                            -ms-transform: scale(1.05);
+                                transform: scale(1.05);
+                        -webkit-transition: 0.3s ease-in-out;
+                        -o-transition: 0.3s ease-in-out;
+                        transition: 0.3s ease-in-out;
+                    }
+                }
+
+                .link-wrapper 
+                {
+                    width: 100%;
+                    .content 
+                    {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 2.5%;
+                        @include flexbox(space-between, center);
+                        width: 100%; 
+
+                        .product-name 
+                        {
+                            padding-left: 2rem;
+                            @include resetLinks;
+                            color: $primary-clr;
+                            font-weight: bold;
+
+                            .gender 
+                            {
+                                font-weight: lighter;
+                                color: #999;
+                            }
+                        }
+
+                        .price 
+                        {
+                            padding-right: 2rem;
+                            @include resetLinks;
+                            color: $primary-clr;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+            // story 
+
+            .story-container 
+            {
+                overflow: hidden;
+               .link-wrapper 
+               {
+                   .prod-showcase 
+                   {
+                       img 
+                       {
+                        width: 100%;
+                        height: 500px;
+                       }
+                   }
+
+                   .top-content 
+                   {
+                       position: absolute;
+                       top: 5%;
+                       left: 0;
+                       @include flexbox(space-between, start);
+                       width: 100%;
+                       color: #fff;
+                       font-size: 15px;
+
+                       .title 
+                       {
+                        padding-left: 2rem;
+                        font-weight: bold;
+                       }
+
+                       .date 
+                       {
+                           padding-right: 2rem;
+                           font-weight: bold;
+                       }
+                   }
+
+                   .story-name 
+                   {
+                       position: absolute;
+                       bottom: 5%;
+                       left: 0;
+                       padding-left: 2rem;
+
+                       span 
+                       {
+                           color: #fff;
+                           font-weight: bold;
+                           font-size: 20px;
+                       }
+                   }
+               }
+            }
+
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 1024px) {
+    main 
+    {
+        .products , .stories
+        {
+            padding: $mobile-padding;
+            &__heading 
+            {
+                margin-top: 0rem;
+                
+            }
+        }
+
+        .mission-showcase  
+        {
+            margin-top: 5rem;
+
+            .grid-hero 
+            {
+                .inner-content  
+                {
+                    padding: 5rem 2rem;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
+
+                    p 
+                    {
+                        font-size: 3rem;
+                        line-height: 4rem;
+                        width: 100%;
+                    }
+
+                    a 
+                    {
+                        margin-top: 2.5rem;
+                    }
+                }
+            }
+
+
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    main 
+    {
+        .products , .stories
+        {
+            padding: $mobile-smaller-padding;
+            margin-top: 5rem;
+            &__heading 
+            {
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                margin-top: 0rem;
+                margin-bottom: 5rem;
+
+                span
+                {
+                    font-size: 3rem;
+                }
+                
+            }
+
+            &__container 
+            {
+                &__box 
+                {
+                    .link-wrapper 
+                    {
+                        .content 
+                        {
+                          -ms-flex-wrap: wrap;
+                              flex-wrap: wrap;
+                         
+                            .product-name  
+                            {
+                                padding-left: .5rem;
+                            }
+
+                            .price  
+                            {
+                                padding-right: .5rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+        }
+
+
+
+
+        .mission-showcase  
+        {
+            margin-top: 5rem;
+
+            .grid-hero 
+            {
+                .inner-content  
+                {
+                    padding: 5rem 1rem;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
+
+                    p 
+                    {
+                        font-size: 2.5rem;
+                        line-height: 3rem;
+                        width: 100%;
+                    }
+
+                    a 
+                    {
+                        margin-top: 2.5rem;
+                    }
+                }
+            }
+
+
+        }
+
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main 
+    {
+        .products , .stories
+        {
+            padding: $mobile-smaller-padding;
+            margin-top: 2.5rem;
+            &__heading 
+            {
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                margin-top: 0rem;
+                margin-bottom: 3rem;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                @include flexbox(start, start);
+
+                span
+                {
+                    font-size: 2.5rem;
+                }
+
+                a 
+                {
+                    width: auto;
+
+                    i 
+                    {
+                        margin-left: 1rem;
+                    }
+                }
+                
+            }
+
+            &__container 
+            {
+                &__box 
+                {
+                    .link-wrapper 
+                    {
+                        .content 
+                        {
+                          -ms-flex-wrap: wrap;
+                              flex-wrap: wrap;
+                          @include flexbox(start, start);
+                          top: 0;
+                          left: 0;
+                          -webkit-box-orient: vertical;
+                          -webkit-box-direction: normal;
+                              -ms-flex-direction: column;
+                                  flex-direction: column;
+                         
+                            .product-name  ,.price 
+                            {
+                                padding: 0;
+                            }
+                            
+                            .price 
+                            {
+                                position: absolute;
+                                bottom: 5%;
+                                right: 5%;
+                            }
+                            .product-name 
+                            {
+                              position: absolute;
+                              top: 5%;
+                              left: 5%;
+                            }
+                        }
+                    }
+
+                }
+
+                .story-container 
+                {
+                    
+                    .link-wrapper 
+                    {
+
+                        .prod-showcase 
+                        {
+                            img 
+                            {
+                                height: 300px;
+                            }
+                        }
+                        .top-content 
+                        {
+                            .title 
+                            {
+                                padding-left: 1rem;
+                            }
+
+                            .date 
+                            {
+                                padding-right: 1rem;
+                            }
+                        }
+
+                        .story-name  
+                        {
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .mission-showcase  
+        {
+            margin-top: 2.5rem;
+            margin-bottom: -2.5rem;
+
+            .grid-hero 
+            {
+                height: 80vh;
+               
+                .inner-content  
+                {
+                    padding: 2rem 1rem;
+                    height: 100%;
+                    
+                    @include flexbox(space-around, start);
+
+                    p 
+                    {
+                        font-size: 2rem;
+                        line-height: 3rem;
+                        width: 100%;
+                    }
+
+                    a 
+                    {
+                        margin-top: 2.5rem;
+                    }
+                }
+            }
+
+
+        }
+
+    }
+}
